@@ -1,0 +1,38 @@
+<div class="main-content">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="card">
+          <div class="card-header card-header-primary">
+            <h4 class="card-title">Araba Listesi</h4>
+            <p class="card-category">Tüm Arabalar</p>
+          </div>
+          <div class="card-body">
+            <div class="table-responsive">
+              <table class="table">
+                <thead class="text-primary">
+                  <th>Marka</th>
+                  <th>Model Adı</th>
+                  <th>Renk</th>
+                  <th>Model Yılı</th>
+                  <th>Açıklama</th>
+                  <th>Günlük Fiyatı</th>
+                </thead>
+                <tbody>
+                  <tr *ngFor="let car of cars">
+                    <td>{{ car.brandName }}</td>
+                    <td>{{ car.modelName }}</td>
+                    <td>{{ car.colorName }}</td>
+                    <td>{{ car.modelYear }}</td>
+                    <td>{{ car.description }}</td>
+                    <td>{{ car.dailyPrice |currency }}</td>                  
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
