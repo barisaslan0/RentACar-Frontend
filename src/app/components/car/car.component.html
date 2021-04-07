@@ -1,6 +1,30 @@
 <div class="main-content">
   <div class="container-fluid">
     <div class="row">
+      <div class="col-lg-2 col-md-6 col-sm-3">
+        <div class="dropdown">
+          <button class="btn dropdown-toggle btn btn-success" data-toggle="dropdown" aria-expanded="true" >
+              Markalar
+              <b class="caret"></b>
+          </button>
+          <ul  class="dropdown-menu">
+              <li routerLink="brand/{{brand.brandId}}" *ngFor="let brand of brands"><a>{{brand.brandName}}</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="col-lg-2 col-md-6 col-sm-3">
+        <div class="dropdown">
+          <button class="btn dropdown-toggle btn btn-danger" data-toggle="dropdown" aria-expanded="true" >
+              Renkler
+              <b class="caret"></b>
+          </button>
+          <ul  class="dropdown-menu">
+              <li  routerLink="color/{{color.colorId}}" *ngFor="let color of colors"><a>{{color.colorName}}</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="row">
       <div class="col-md-12">
         <div class="card">
           <div class="card-header card-header-primary">
@@ -17,6 +41,7 @@
                   <th>Model Yılı</th>
                   <th>Açıklama</th>
                   <th>Günlük Fiyatı</th>
+                  <th></th>
                 </thead>
                 <tbody>
                   <tr *ngFor="let car of cars">
@@ -25,7 +50,8 @@
                     <td>{{ car.colorName }}</td>
                     <td>{{ car.modelYear }}</td>
                     <td>{{ car.description }}</td>
-                    <td>{{ car.dailyPrice |currency }}</td>                  
+                    <td>{{ car.dailyPrice |currency }}</td>    
+                    <td routerLink="cardetails/{{car.carId}}"><button mat-raised-button class="btn btn-info">DETAYLAR</button></td>              
                   </tr>
                 </tbody>
               </table>
